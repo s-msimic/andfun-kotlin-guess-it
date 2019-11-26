@@ -57,7 +57,7 @@ class ScoreFragment : Fragment() {
         viewModel = ViewModelProviders.of(this, viewModelFactory)
                 .get(ScoreViewModel::class.java)
 
-        // TODO (06) Pass the ScoreViewModel into the data binding - then you can remove the
+        binding.scoreViewModel = viewModel
         // OnClickListener setup for playAgainButton from here
 
         // Add observer for score
@@ -65,7 +65,6 @@ class ScoreFragment : Fragment() {
             binding.scoreText.text = newScore.toString()
         })
 
-        binding.playAgainButton.setOnClickListener { viewModel.onPlayAgain() }
 
         // Navigates back to title when button is pressed
         viewModel.eventPlayAgain.observe(this, Observer { playAgain ->
