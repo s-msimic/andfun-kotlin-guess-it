@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:fontFamily="sans-serif"
-            android:text="@string/word_is"
+            android:text="@{@string/quote_format(gameViewModel.word)}"
             android:textColor="@color/black_text_color"
             android:textSize="14sp"
             android:textStyle="normal"
@@ -47,9 +47,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed" />
-
-        <!-- TODO (01) For score_text and word_text use the LiveData from GameViewModel to set the
-        text attribute -->
 
         <TextView
             android:id="@+id/word_text"
@@ -95,6 +92,7 @@
             android:textColor="@color/grey_text_color"
             android:textSize="14sp"
             android:textStyle="normal"
+            android:text="@{@string/score_format(gameViewModel.score)}"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
